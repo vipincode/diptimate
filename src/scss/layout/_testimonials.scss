@@ -1,0 +1,90 @@
+// =======================================================================
+//                TESTIMONIALS
+// =======================================================================
+
+#testimonials {
+    padding: 80px 0px 30px;
+}
+
+.testimonials {
+    .main-heading {
+        position: relative;
+        &::before {
+            content: "T";
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+        h1 {
+            @extend %top;
+        }
+        p {
+            @extend %top;
+        }
+    }
+
+    &-content {
+        position: relative;
+    }
+
+    
+    &--item {
+        position: relative;
+        z-index: 9;
+        margin: 0 auto;
+        padding: 35px 25px 25px;
+        border-radius: $br-radius;
+        background: color(grey, x-light);
+        text-align: center;
+        margin-top: 100px;
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: $br-roundy;
+            object-fit: cover;
+            border: 5px solid color(grey, x-light);
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h4 {
+            font-size: em(17px);
+            line-height: em(17px, 17px);
+            font-weight: $font-weight--md;
+            letter-spacing: $letter-space;
+            text-transform: capitalize;
+            margin-top: em(10px, 17px);
+        }
+
+        span {
+            font-size: em(14px);
+            letter-spacing: $letter-space;
+            text-transform: capitalize;
+            display: block;
+        }
+
+        p {
+            font-size: em(15px);
+            font-weight: $font-weight--xs;
+            line-height: em(27px, 15px);
+            margin-bottom: em(20px, 15px);
+            position: relative;
+            @include p-el($el: 'after', $el-width: 50px, $el-height: 50px) {
+                content: '\f10e';
+                font-family: FontAwesome;
+                bottom: -30px;
+                font-size: em(38px);
+                color: color(black, x-light);
+            }
+        }
+    }
+
+}
+
+.swiper3 {
+    .swiper-pagination-bullet-active {
+        background-color: color(primary);
+    }
+}

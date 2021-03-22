@@ -1,0 +1,52 @@
+// ==========================================================
+//                   BUTTON RULE
+// ==========================================================
+
+%btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    display: inline-block;
+    padding: 7px 18px;
+    font-size: em(13px);
+    line-height: 28px;
+    font-weight: $font-weight--md;
+    margin-top: em(30px, 18px);
+    letter-spacing: $letter-space;
+    text-transform: uppercase;
+    border-radius: em(30px, 18px);
+    background-color: transparent;
+    color: color(grey, x-light);
+
+    @include mq(lg) {
+        padding: 6px 25px;
+        font-size: em(17px);
+        line-height: 30px;
+        font-weight: $font-weight--md;
+    }
+}
+
+.btn {
+    @extend %btn;
+
+    &--primary {
+        background: linear-gradient(90deg, $dipti__red, $primary__color);
+        color: $dipti__white;
+        transition: opacity 0.4s ease-out;
+        &:hover {
+           opacity: 0.85;
+        }
+    }
+
+    &--secondary {
+        color: color(black, light);
+        border: 2px solid color(black);
+        transition: background-color 0.4s ease-out, color 0.3s ease-out;
+        &:hover {
+            background-color: color(black, light);
+            color: color(grey, x-light);
+        }
+    }
+
+    @include bg-colors($ui-colors );
+}

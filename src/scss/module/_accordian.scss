@@ -1,0 +1,61 @@
+// ======================================================================
+//                     ACCORDIAN
+// ======================================================================
+
+.accordian {
+    width: 95%;
+    margin:  0 auto;
+
+    @include mq('lg') {
+        width: 65%;
+    }
+
+    @include mq('xl') {
+        width: 45%;
+    }
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid color(grey, light);
+    transition: max-height 0.2s ease-out;
+
+    p {
+        padding: 15px 5px;
+    }
+}
+
+#tab-button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 15px 0px 15px;
+    font-size: em(21px);
+    font-weight: $font-weight--xs;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    @include p-el($el: 'after', $el-width: 15px, $el-height: 15px) {
+        top: 0;
+        right: 0;
+        content: '\f107';
+        font-family: FontAwesome;
+        transition: transform 0.3s ease-in;
+        color: color(primary);
+    }
+}
+
+#tab-button.active {
+    position: relative;
+    @include p-el($el: 'after', $el-width: 15px, $el-height: 15px) {
+        top: 11px;
+        right: 0;
+        content: '\f107';
+        font-family: FontAwesome;
+        transform: rotate(-180deg);
+        transition: transform 0.3s ease-in;
+        color: color(primary);
+    }
+}

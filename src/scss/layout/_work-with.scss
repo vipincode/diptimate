@@ -1,0 +1,28 @@
+// ==============================================================================
+//                   WORK WITH US
+// ==============================================================================
+
+#work-with-us {
+    background: linear-gradient(90deg, $dipti__red, $primary__color);
+    @extend %pd-50;
+    text-align: center;
+
+    article {
+        width: 100%;
+        margin: 0 auto;
+
+        @include mq('lg') {
+            width: 70%;
+        }
+
+        h2 {
+            @include mq('xs') {
+                font-size: em(26px);
+            }
+            color: $dipti__white;
+        }
+        p {
+            color: $dipti__white;
+        }
+    }
+}

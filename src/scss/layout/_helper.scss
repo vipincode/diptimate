@@ -1,0 +1,86 @@
+
+// ========================================================
+//          BACK LETTER
+// ========================================================
+
+%back-letter {
+    font-size: em(250px);
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 1;
+    line-height: 0;
+    font-weight: 800;
+    opacity: 0.3;
+
+    @include mq('md') {
+        font-size: em(332px);
+        top: 82px;
+    }
+}
+
+// ========================================================
+//         ADD Z-INDEX
+// ========================================================
+
+%top {
+    position: relative;
+    z-index: 3;
+}
+
+// ========================================================
+//          BACKGROUND IMAGE
+// ========================================================
+
+%bg-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 52px;
+    width: 52px;
+    margin: 0 auto;
+    transition: background-image 0.3s ease-in;
+}
+
+// ========================================================
+//          FILL ICON
+// ========================================================
+
+%fill-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: $br-roundy;
+    font-size: em(22px);
+    line-height: em(60px, 22px);
+    position: relative;
+
+    i {
+        @extend %top;
+        color: $dipti__white;
+        margin-left: 20px;
+    }
+
+    @include p-el($el: 'before', $el-height: 45px, $el-width: 45px) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: $br-roundy;
+        text-align: center;
+        background-color: color(primary);
+        background: linear-gradient(90deg, $dipti__red, $primary__color);
+    }
+}
+
+
+// ========================================================
+//         HEADER MARGIN
+// ======================================================== 
+
+%pd-50 {
+    padding: 50px 0px;
+}
+
+%mt-80 {
+    margin: 80px 0px;
+}

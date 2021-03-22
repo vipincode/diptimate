@@ -1,0 +1,76 @@
+// ===============================================================
+//                COLOR MIXINS
+// ===============================================================
+
+@mixin bg-colors($map) {
+	@each $theme, $color in $map {
+		&--#{$theme} {
+			background-color: $color;
+		}
+	}
+}
+
+// ===============================================================
+//                PSEUDO ELEMENT MIXINS
+// ===============================================================
+
+@mixin p-el($el, $el-width, $el-height) {
+    @if $el=="before"or $el=="after" {
+        &:#{$el} {
+            @extend %pseudos;
+            width: $el-width;
+            height: $el-height;
+            @content;
+        }
+    }
+    @else {
+        @warn "`#{$el}` is not a valid pseudo-element.";
+    }
+}
+
+// ===============================================================
+//                IMAGE AVATAR
+// ===============================================================
+
+@mixin img-avatar($width: null, $height: null, $br-radius: $br-roundy) {
+	display: block;
+	width: $width;
+	height: $height;
+	border-radius: $br-radius;
+	@content;
+}
+
+// ===============================================================
+//               FLEX BOX MIXINS
+// ===============================================================
+
+@mixin flexy($disp: flex, $just: null, $wrap: null, $align: null, $dir: null) {
+	display: $disp;
+	flex-wrap: $wrap;
+	justify-content: $just;
+	align-items: $align;
+	flex-direction: $dir;
+}
+
+// ===============================================================
+//                MEDIA QUERY MIXINS
+// ===============================================================
+
+@mixin mq($break) {
+	$value: map-get($breakpoints, $break);
+	$sm: map-get($breakpoints, 'sm');
+
+	@if $value == null {
+		@error "`#{$break}` is not a valid break point";
+	}
+	@else if $value < $sm {
+		@media(max-width: $value) {
+			@content;
+		}
+	}
+	@else {
+		@media(min-width: $value) {
+			@content;
+		}
+	}
+}

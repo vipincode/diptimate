@@ -1,0 +1,75 @@
+// ==================================================================
+//                   CONTACT US
+// ==================================================================
+
+#contact {
+    @extend %mt-80;
+    .main-heading {
+        position: relative;
+
+        &::before {
+            content: 'C';
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+
+        h1 {
+            @extend %top;
+        }
+
+        p {
+            @extend %top;
+        }
+    }
+}
+
+.contact {
+    margin-top: em(50px);
+    @include mq('lg') {
+        margin-top: 0px;
+    }
+    
+    &-address {
+        margin-bottom: em(30px);
+        span {
+            border-right: 2px dashed color(primary);
+            @extend %fill-icon;
+        }
+    }
+
+    &-email {
+        margin-bottom: em(30px);
+        a {
+            padding: 0px;
+        }
+        span {
+            border-left: 2px dashed color(primary);
+            @extend %fill-icon;
+        }
+    }
+
+    &-phone {
+        a {
+            padding: 0px;
+        }
+        margin-bottom: em(30px);
+        span {
+            border-right: 2px dashed color(primary);
+            @extend %fill-icon;
+        }
+    }
+
+    ul {
+        li {
+            font-size: em(17px);
+        }
+    }
+
+    &-form {
+        @extend %top;
+
+        .btn {
+            margin-top: 0px;
+        }
+    }
+}

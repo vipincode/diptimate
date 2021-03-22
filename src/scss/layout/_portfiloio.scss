@@ -1,0 +1,129 @@
+// ====================================================================
+//                       OUR PORTFOLIO
+// ====================================================================
+
+#portfolio {
+    @extend %mt-80;
+    .main-heading {
+        position: relative;
+        &::before {
+            content: 'P';
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+
+        h1 {
+            @extend %top;
+        }
+
+        p {
+            @extend %top;
+        }
+    }
+}
+
+.portfolio {
+    @extend %top;
+    margin-top: 130px;
+    &--item {
+        perspective: 1000px;
+        margin-bottom: em(24px);
+        text-align: center;
+
+        &:hover .portfolio-card {
+            transform: rotateY(180deg);
+        }
+
+    }
+    &-card {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+
+        &--front {
+          @extend %flip;
+          overflow: hidden;
+        }
+
+        &--back {
+            @extend %flip;
+            background: linear-gradient(90deg, $dipti__red, $primary__color);
+            color: $dipti__white;
+            transform: rotateY(180deg);
+            padding: em(20px);
+
+            article {
+                height: 100%;
+                @include flexy($dir: column);
+            }
+
+            h4 {
+                font-size: em(25px);
+                line-height: em(30px, 25px);
+                font-weight: $font-weight--sm;
+                margin-bottom: em(8px, 25px);
+            }
+
+            p {
+                font-size: em(16px);
+                letter-spacing: $letter-space;
+            }
+
+            a {
+                align-self: center;
+                margin-top: auto;
+                border: 2px solid $dipti__white;
+                padding: 0 15px;
+                font-size: em(14px);
+                line-height: em(35px, 14px);
+                font-weight: $font-weight--sm;
+                text-transform: uppercase;
+                color: $dipti__white;
+                border-radius: 30px;
+                letter-spacing: $letter-space;
+                transition: background-color $transition ease-in;
+
+                &:hover {
+                    background-color: color(primary, light);
+                }
+            }
+        }
+    }
+}
+
+// ====================================================================
+//                       PORTFOLIO DETAILS
+// ====================================================================
+
+#prj-detail {
+    @extend %mt-80;
+    .main-heading {
+        position: relative;
+        &::before {
+            content: 'P';
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+
+        h1 {
+            @extend %top;
+        }
+
+        p {
+            @extend %top;
+        }
+    }
+}
+
+.prj-details {
+    margin-top: em(100px);
+
+    &--content {
+        margin-top: em(30px);
+        @include mq('md') {
+            margin-top: 0px;
+        }
+    }
+}

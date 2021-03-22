@@ -1,0 +1,233 @@
+// ======================================================================================
+//                 SITE MAIN HEADLINE
+// ========================================================================================
+
+.main-heading {
+    text-align: center;
+    position: relative;
+
+    @include mq('md') {
+        width: 80%;
+        margin: 0 auto em(50px);
+    }
+
+    @include mq('lg') {
+        width: 62%;
+    }
+
+    @include mq('xl') {
+        width: 47%;
+    }
+
+    h1 {
+        font-size: em(34px);
+        line-height: em(33px, 34px);
+        margin-bottom: em(15px, 34px);
+        font-weight: $font-weight--xl;
+        position: relative;
+
+        @include mq('lg') {
+            font-size: em(42px);
+            line-height: em(33px, 42px);
+            margin-bottom: em(15px, 42px);
+        }
+      
+        @include p-el($el: after, $el-height: 52px, $el-width: 52px) {
+            top: em(-10px, 42px);
+            margin-left: em(-30px, 42px);
+            background: color(primary, x-light);
+            border-radius: $br-roundy;
+            z-index: -2;
+        }
+        @include p-el($el: before, $el-height: 12px, $el-width: 12px) {
+            top: em(11px, 42px);
+            right: em(86px, 42px);
+            background: color(primary);
+            border-radius: $br-roundy;
+            z-index: -1;
+        }
+    }
+    p {
+        font-size: em(14px);
+        line-height: em(25px, 14px);
+        font-weight: $font-weight--sm;
+        letter-spacing: $letter-space;
+
+        @include mq('lg') {
+            font-size: em(17px);
+            line-height: em(28px, 17px);
+        }
+    
+    }
+}
+
+// ========================================================================================
+//                 SITE SUB HEADLINE 
+//========================================================================================
+
+.sub-heading {
+    h1 {
+        font-size: em(32px);
+        font-weight: $font-weight--md;
+        line-height: em(40px, 32px);
+        margin-bottom: em(20px, 32px);
+        @extend %top;
+
+        @include mq('lg') {
+            font-size: em(52px);
+            line-height: em(56px, 52px);
+            margin-bottom: em(20px, 52px);
+        }
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+
+// ========================================================================================
+//                 PRIMARY HEADING [SMALL]
+// ========================================================================================
+
+.primary-heading {
+    font-size: em(16px);
+    font-weight: $font-weight--xl;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: color(primary);
+    padding-right: 12px;
+    margin-bottom: em(20px, 16px);
+    @extend %top;
+    @include p-el($el: after, $el-width: 60px, $el-height: 2px) {
+        top: 11px;
+        margin-left: 10px;
+        background-color: color(grey);
+    }
+}
+
+// ========================================================================================
+//         SECONDARY HEADLINE [PRIMARY SMALL]
+// ========================================================================================
+
+.secondary-heading {
+    font-size: em(31px);
+    line-height: em(38px, 31px);
+    color: color(black, light);
+    letter-spacing: $letter-space;
+    font-weight: $font-weight--xs;
+    text-transform: capitalize;
+    margin-bottom: em(20px, 31px);
+    @extend %top;
+
+    @include mq('lg') {
+        font-size: em(42px);
+        line-height: em(52px, 42px);
+    }
+}
+
+// ========================================================================================
+//                SMALL HEADING
+// ========================================================================================
+
+.small-heading {
+    font-size: em(28px);
+    font-weight: $font-weight--sm;
+    margin-bottom: em(15px, 32px);
+    position: relative;
+
+    @include p-el($el: 'after', $el-width: 35px, $el-height: 2px) {
+        background-color: color(primary);
+        display: block;
+    }
+}
+
+.small-text-accent {
+    font-size: em(18px);
+    font-weight: $font-weight--xs;
+}
+
+
+// ========================================================================================
+//                 PARAGRAPH ACCENT
+// ========================================================================================
+
+.text-accent--black {
+    font-size: em(17px);
+    line-height: em(28px, 17px);
+    font-weight: $font-weight--xs;
+    color: color(black, x-light);
+    @extend %top;
+
+    @include mq('md') {
+        font-size: em(22px);
+        line-height: em(33px, 22px);
+    } 
+}
+
+.text-accent--white {
+    font-size: em(17px);
+    line-height: em(28px, 17px);
+    font-weight: $font-weight--xs;
+    color: color(grey, x-light);
+    letter-spacing: $letter-space;
+    position: relative;
+    @extend %top;
+
+    @include mq('md') {
+        font-size: em(21px);
+        line-height: em(33px, 21px);
+    } 
+}
+
+// ========================================================================================
+//                             PAGE HEADER HEADING
+// ========================================================================================
+
+#page-header {
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: cover;
+    padding: 130px 0px;
+    position: relative;
+
+    @include mq('lg') {
+        background-position: 0px -60px;
+    }
+
+    @include p-el($el: 'before', $el-width: 100%, $el-height: 100%) {
+        top: 0;
+        z-index: 1;
+        background: url('../../images/overlay-pattern.png') $dipti__black;
+        opacity: 0.7;
+    }
+    @include p-el($el: 'after', $el-width: 100%, $el-height: 100%) {
+        top: 0;
+        z-index: 1;
+        background: url('../../images/bg_lines.svg');
+        background-repeat: no-repeat;
+        background-size: 200%;
+        background-position: center;
+        opacity: 0.04;
+    }
+}
+
+.page-header {
+    @extend %top;
+    color: $dipti__white;
+    text-align: center;
+
+    h1 {
+        font-size: em(32px);
+        line-height: em(34px, 32px);
+        margin-bottom: em(20px, 32px);
+        font-weight: $font-weight--lg;
+        text-transform: capitalize;
+        @include mq(md) {
+            font-size: em(65px);
+            line-height: em(80px, 65px);
+            margin-bottom: 0px;
+            font-weight: $font-weight--sm;
+        }
+     }
+}

@@ -1,0 +1,37 @@
+// ======================================================================
+//                     FAQs
+// ======================================================================
+
+#faqs {
+    margin-top: 80px;
+    .main-heading {
+        position: relative;
+        &::before {
+            content: "F";
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+        h1 {
+            @extend %top;
+        }
+
+        p {
+            @extend %top;
+        }
+    }
+}
+
+.faqs {
+    padding: 80px 0px 100px;
+    background-color: color(grey, x-light);
+
+    &-question {
+        h1 {
+            text-align: center;
+        }
+
+        .accordian {
+            margin-top: 50px;
+        }
+    }
+}

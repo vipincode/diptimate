@@ -1,0 +1,179 @@
+// ============================================================
+//                 FOOTER RULE
+// ============================================================
+
+#footer {
+    background-color: color(grey, x-light);
+    background-image: url('../../images/map.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    padding: 80px 0 6px;
+}
+
+.footer {
+    a {
+        transition: color $transition ease-in;
+        padding: 0px;
+        &:hover {
+            color: color(primary);
+        }
+    }
+    &-callus {
+        a {
+            padding: 0;
+        }
+
+        h3 {
+            font-size: em(24px);
+            font-weight: $font-weight--xs;
+            margin-bottom: em(13px, 24px);
+            position: relative;
+            @include p-el($el: 'after', $el-width: 35px, $el-height: 2px) {
+                display: block;
+                background-color: color(primary);
+            }
+
+            @include mq('lg') {
+                font-size: em(28px);
+                margin-bottom: em(13px, 28px);
+            }
+        }
+
+        ul {
+            li {
+                font-size: em(15px);
+                font-weight: 300;
+
+                @include mq('lg') {
+                    font-size: em(17px);
+                }
+            }
+        }
+    }
+    &-lg {
+        margin-top: em(50px);
+
+        &--item {
+            img {
+                width: 145px;
+            }
+            p {
+                font-size: em(15px);
+                font-weight: $font-weight--xs;
+                line-height: em(24px, 15px);
+                width: em(250px);
+            }
+
+            .socilas {
+                @include flexy();
+                margin-top: em(20px);
+                a {
+                    padding: 0;
+                    color: $dipti__red;
+                }
+                
+                li {
+                    margin-right: em(20px, 15px);
+                }
+            }
+
+            h3 {
+                font-size: em(24px);
+                margin-top: em(30px, 24px);
+                font-weight: $font-weight--xs;
+
+                @include mq('lg') {
+                    font-size: em(28px);
+                    margin-top: 0px;
+                }
+            }
+
+            .days {
+                li {
+                    font-size: em(16px);
+                    font-weight: $font-weight--xs;
+
+                    strong {
+                        font-weight: $font-weight--sm;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.news-letter {
+    margin-top: em(15px); 
+    input[type="email"] {
+        width: 100%;
+        font-size: em(15px);
+        line-height: em(30px, 15px);
+        border: 1px solid color(grey, light);
+        border-radius: $br-radius;
+        padding: 4px 12px;
+        outline: none;
+        @include mq('xs') {
+            margin-bottom: 0px;
+        }
+    }
+
+    button {
+        width: 100%;
+        outline: none;
+        border: none;
+        color: $dipti__white;
+        cursor: pointer;
+        font-size: em(15px);
+        line-height: em(35px, 15px);
+        font-weight: $font-weight--md;
+        background-color: transparent;
+        padding: 3px 10px;
+        border-radius: $br-radius;
+        background: linear-gradient(90deg, $dipti__red, $primary__color);
+        transition: background-color $transition ease-in, color $transition ease-in;
+
+        @include mq('lg') {
+            line-height: em(32px, 15px);
+        }
+    }
+} 
+
+.rights {
+    margin-top: em(80px);
+    p {
+        font-size: em(13px);
+        font-weight: $font-weight--xs;
+        text-align: center;
+        letter-spacing: $letter-space;
+        @include mq('lg') {
+            font-size: em(14px);
+        }
+    }
+    a {
+        display: inline-block;
+        color: color(primary);
+        padding: 0 3px;
+    }
+}
+
+// ============================================================
+//                ADD SECTION
+// ============================================================
+
+.gr-business {
+    background: linear-gradient(90deg, $dipti__red, $primary__color);
+    padding: 80px 0px;
+    color: $dipti__white;
+
+    h2 {
+        font-size: em(26px);
+        color: $dipti__white;
+        @include mq('lg') {
+            font-size: em(36px);
+        }
+    }
+    p {
+        color: $dipti__white;
+    }
+}

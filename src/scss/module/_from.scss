@@ -1,0 +1,38 @@
+// =================================================================
+//                   FORM
+// =================================================================
+
+input,
+textarea,
+select {
+    width: 100%;
+    outline: none;
+    border: 1px solid color(grey, light);
+    padding: 6px 12px;
+    font-size: em(15px);
+    line-height: em(28px, 15px);
+    border-radius: $br-radius;
+    font-weight: $font-weight--xs;
+    margin-bottom: em(25px, 17px);
+
+    @include mq('lg') {
+        font-size: em(17px);
+        line-height: em(28px, 17px);
+    }
+}
+
+select {
+    padding: 8px 12px;
+}
+
+label {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    border: 1px dashed color(grey, light);
+    border-radius: $br-radius;
+    cursor: pointer;
+}

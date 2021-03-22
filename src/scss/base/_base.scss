@@ -1,0 +1,42 @@
+// ============================================================
+//            BASE RULE
+// ============================================================
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family--primary;
+    color: color(black, light);
+    font-size: $base-font;
+    line-height: $base--line/$base-font;
+    font-weight: $font-weight--xs;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: $dipti__black;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

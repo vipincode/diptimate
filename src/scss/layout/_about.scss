@@ -1,0 +1,322 @@
+// ==============================================================================
+//                    ABOUT US
+// ==============================================================================
+
+#dpt-about {
+  margin: 80px 0px 30px;
+}
+
+.dpt-about {
+    text-align: center;
+
+    h2 {
+        font-size: em(28px);
+    }
+
+    article {
+        width: 100%;
+        margin: 0 auto;
+        @include mq('lg') {
+            width: 70%;
+        }
+    }
+}
+
+.dpt-about {
+    h1 {
+        position: relative;
+        &::before {
+            content: "D";
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+    }
+}
+
+// ==============================================================================
+//                    MISSION
+// ==============================================================================
+
+#dpt-mission {
+    background-color: color(grey, x-light);
+    @extend %pd-50;
+    counter-reset: section;
+}
+
+.dpt-mission {
+    padding-left: em(25px);
+    @include mq('xs') {
+        margin-left: 13px;
+    }
+    border-left: 1px solid color(primary, x-light);
+    // counter-reset: section;
+    &--items {
+        margin-bottom: em(30px);
+        position: relative;
+        @include p-el($el: 'before', $el-width: 30px, $el-height: 30px) {
+            counter-increment: section;                  
+            content: counter(section) " ";
+            left: -40px;
+            top: 9px;
+            background: linear-gradient(90deg, $dipti__red, $primary__color);
+            color: $dipti__white;
+            border-radius: $br-roundy;
+            text-align: center;
+            font-size: em(17px);
+            font-weight: $font-weight--sm;
+            line-height: em(30px, 17px);  
+        }
+
+        .small-heading {
+          &::after {
+            background-color: transparent;
+          }
+        }
+    }
+}
+
+// ==============================================================================
+//                    WHO WE ARE
+// ==============================================================================
+
+#dpt-whoweare {
+    @extend %mt-80;
+    @extend %pd-50;
+    .main-heading {
+        margin: initial;
+        position: relative;
+        z-index: 3;
+        &::before {
+            content: "W";
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+
+        h1 {
+            @extend %top;
+        }
+        p {
+            @extend %top;
+        }
+    }
+}
+
+.dpt-whoweare {
+    @extend %top;
+}
+
+// ==============================================================================
+//                   TEAM
+// ==============================================================================
+
+#dpt-team {
+    @extend %pd-50;
+    @extend %top;
+    .main-heading {
+        margin: initial;
+        margin-left: auto;
+        position: relative;
+        z-index: 3;
+        &::before {
+            content: "T";
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+
+        h1 {
+            @extend %top;
+        }
+        p {
+            @extend %top;
+        }
+    }
+}
+
+.dpt-team {
+    @extend %top;
+    margin-top: 50px;
+
+    &-image {
+        img {
+            width: 100%;
+        }
+    }
+
+    &--content {
+        h4 {
+            font-size: em(24px);
+            font-weight: $font-weight--sm;
+            line-height: em(22px, 24px);
+            margin-top: em(15px, 24px)
+        }
+        span {
+            font-weight: $font-weight--xs;
+            letter-spacing: $letter-space;
+        }
+    }
+
+    &--item {
+        @include mq('xs') {
+            margin-top: em(30px);
+        }
+    }
+}
+
+// ==============================================================================
+//                    CLIENTS
+// ==============================================================================
+
+#dpt-clients {
+    background-color: color(grey, x-light);
+    @extend %pd-50;
+}
+
+.dpt-clients {
+
+    &--item {
+        margin-top: em(30px);
+        @include mq('md') {
+            margin-top: 0px;
+        }
+        @extend %top;
+
+        article {
+            h2 {
+                font-size: em(25px);
+                font-weight: $font-weight--sm;
+                line-height: em(38px, 25px);
+                @include mq('md') {
+                    font-size: em(36px);
+                    font-weight: $font-weight--sm;
+                    line-height: em(38px, 36px);
+                }
+            }
+
+            h3 {
+                font-size: em(19px);
+                font-weight: $font-weight--xs;
+                line-height: em(30px, 19px);
+                margin-bottom: em(20px, 19px);
+               @include mq('md') {
+                font-size: em(21px);
+                line-height: em(30px, 21px);
+                margin-bottom: em(20px, 21px);
+               }
+            }
+
+           li {
+               padding-left: 25px;
+               position: relative;
+               @include p-el($el: 'before', $el-width: 20px, $el-height: 20px) {
+                   content: '✔';
+                   color: color(primary);
+                   top: 3px;
+                   left: 0;
+               }
+           }
+        }
+    }
+
+    &--slider {
+        width: 96%;
+        @include mq('sm') {
+            width: 320px;
+        }
+
+        @include mq('xl') {
+            width: 350px;
+        }
+
+        margin: 0 auto;
+        text-align: center;
+        img {
+            width: 150px;
+            height: 150px;
+            margin:  0 auto em(15px);
+            border-radius: $br-roundy;
+            object-fit: cover;
+            border-left: 5px solid transparent;
+            border-right: 11px solid transparent;
+            border-top: 18px solid transparent;
+            border-bottom: 1px solid transparent;
+        }
+
+        p {
+            font-size: em(18px);
+            font-weight: $font-weight--xs;
+            position: relative;
+
+            @include p-el($el:'before', $el-width: 20px, $el-height: 20px) {
+                content: '\f10d';
+                font-family: FontAwesome;
+                color: color(black, x-light);
+                font-size: em(32px);
+                line-height: 0;
+                left: -5px;
+                top: -10px;
+                @include mq('md') {
+                    left: 13px;
+                }
+
+                @include mq('lg') {
+                    left: -5px;
+                }
+
+                @include mq('xl') {
+                    left: -33px;
+                }
+            }
+        }
+
+        h4 {
+            font-size: em(21px);
+            font-weight: $font-weight--sm;
+            margin-top: em(15px, 21px);
+        }
+
+        span {
+            font-weight: $font-weight--xs;
+            letter-spacing: $letter-space;
+        }
+    }
+
+    &--client {
+        margin-top: 105px;
+        @include mq('md') {
+            margin-top: 180px;
+        }
+        @extend %top;
+
+        img {
+            border: 1px solid color(grey, light);
+            border-radius: $br-radius;
+            width: 100px;
+        }
+    }
+}
+
+// ==============================================================================
+//                           SWIPER SETTING
+// ==============================================================================
+
+.swiper4 {
+
+    .swiper-button-prev, .swiper-button-next {
+        box-shadow: 0 10px rgb(color(black), 0.15);
+    }
+
+    .swiper-button-prev:after, .swiper-button-next:after {
+        font-size: em(28px);
+        color: color(primary);
+    }
+
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        right: -2px;
+        background: $dipti__white;
+    }
+
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        left: -1px;
+        background: $dipti__white;
+    }
+}

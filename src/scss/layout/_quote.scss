@@ -1,0 +1,25 @@
+// =====================================================================
+//                      SECTION QUOTE
+// =====================================================================
+
+#quote {
+    margin: 80px 0px 0;
+    background-color: color(grey, x-light);
+    padding: 50px 0px;
+    @extend %top;
+}
+
+.quotes {
+    @include mq('lg') {
+        width: 70%;
+        margin: 0 auto;
+    }
+    form {
+        width: 100%;
+        margin-top: 30px;
+
+        @include mq('lg') {
+            margin-top: 0px;
+        }
+    }
+}

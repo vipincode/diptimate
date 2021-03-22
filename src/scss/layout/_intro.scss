@@ -1,0 +1,66 @@
+// ===============================================================
+//                 ABOUT US
+// ===============================================================
+
+#about {
+    margin: 30px 0px 0px;
+    @include mq('xs') {
+        height: 668px;
+    }
+
+    @include mq('sm') {
+        height: 450px;
+    }
+
+    @include mq('md') {
+        height: 518px;
+    }
+
+    @include mq('xl') {
+        height: auto;
+    }
+}
+
+.about {
+    // height: em(400px);
+    @extend %pd-50;
+    article {
+        padding-right: em(25px);
+        width: 100%;
+        position: relative;
+        &::before {
+            content: "A";
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+
+        @include mq('lg') {
+            width: 85%;
+        }
+    }
+
+    &-image {
+        position: relative;
+
+        &--back {
+            position: absolute;
+            top: 0;
+        }
+
+        &--front {
+            position: absolute;
+            top: em(50px);
+            transform: translateX(-36px);
+
+            @include mq('lg') {
+                transform: translateX(-105px);
+            }
+        }
+
+        &--item {
+            @include mq('xs') {
+                margin-top: em(50px);
+            }
+        }
+    }
+}

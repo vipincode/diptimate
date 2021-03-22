@@ -1,0 +1,103 @@
+// ===============================================================
+//                 CAREER
+// ===============================================================
+
+#career {
+    @extend %mt-80;
+}
+
+.career {
+    @extend %top;
+
+    &-whyus {
+        margin-top: em(50px);
+    }
+
+    &-opening {
+        margin-top: em(50px);
+        @extend %pd-50;
+        background-color: color(grey, x-light);
+        h1 {
+            @extend %top;
+        }
+    }
+
+    &-postion {
+        h3 {
+            font-size: em(25px);
+            font-weight: $font-weight--md;
+        }
+
+        h4 {
+            font-size: em(18px);
+            font-weight: $font-weight--md;
+            margin-top: em(20px, 18px);
+        }
+
+        &--item {
+           padding: 15px 0px;
+            @include mq('lg') {
+                padding: em(50px);
+            }
+        }
+
+        &--item:nth-child(even) {
+            background-color: color(grey, x-light);
+        }
+    }
+}
+
+// ===============================================================
+//                 MODAL SIZES
+// ===============================================================
+
+.modal {
+    border-radius: $br-radius;
+    -webkit-border-radius: $br-radius;
+    padding: 0px;
+    &-header {
+        background: linear-gradient(90deg, $dipti__red, $primary__color);
+        color: $dipti__white;
+        text-align: center;
+        padding: 4px;
+        border-top-left-radius: $br-radius;
+        border-top-right-radius: $br-radius;
+
+        h3 {
+            font-size: em(28px);
+            font-weight: $font-weight--sm;
+        }
+    }
+
+    &-content {
+        padding: 15px;
+        @include mq('lg') {
+            padding: 30px;
+        }
+    }
+
+    .btn {
+        margin-top: 0px;
+    }
+
+    &-sm {
+       @include mq('lg') {
+        max-width: 700px;
+       }
+    }
+    &-md {
+        @include mq('lg') {
+         max-width: 800px;
+        }
+    }
+    &-lg {
+        @include mq('xl') {
+         max-width: 900px;
+        }
+    }
+    &-xl {
+        @include mq('xl') {
+            max-width: 1200px;
+        }
+    }
+}

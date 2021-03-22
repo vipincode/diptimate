@@ -1,0 +1,74 @@
+// ===============================================================
+//                SERVICES SECTION
+// ===============================================================
+
+.services {
+    .main-heading {
+        padding-top: 50px;
+        position: relative;
+        &::after {
+            content: 'O';
+            color: color(primary, x-light);
+            @extend %back-letter;
+        }
+        h1 {
+            @extend %top;
+        }
+        p {
+            @extend %top;
+        }
+    }
+
+    &-item {
+        background: $dipti__white;
+        padding: 15px;
+        border-radius: $br-radius;
+        margin: em(12px) 0;
+        box-shadow: 0px 0px 2px 0px rgba(color(black), 0.16);
+        transition: box-shadow $transition ease-in-out, transform $transition ease-in;
+        // &:hover {
+        //     box-shadow: 0px 0px 20px 0px rgba(color(black), 0.46);
+        //    @include mq("lg") {
+        //     transform: scale(1.1);
+        //    }
+        // }
+
+        &--scale {
+            box-shadow: 0px 0px 20px 0px rgba(color(black), 0.46);
+           @include mq("lg") {
+            transform: scale(1.1);
+           }
+        }
+
+        h3 {
+            font-size: em(19px);
+            font-weight: $font-weight--sm;
+        }
+
+        P {
+            font-weight: $font-weight--xs;
+        }
+
+        a {
+            font-size: em(15px);
+            font-weight: $font-weight--sm;
+            padding: 6px 0px;
+            text-transform: uppercase;
+            color: color(primary);
+            margin-top: em(15px, 15px);
+        }
+
+        img {
+            width: em(42px);
+            margin-bottom: 12px;
+        }
+    }
+
+    .swiper-slide {
+        padding: 40px 0px;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: color(primary);
+    }
+}

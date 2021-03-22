@@ -1,0 +1,90 @@
+// ===========================================================================
+//                    WORKFLOW
+// ============================================================================
+
+#workflow {
+   margin-top: 30px;
+    h1 {
+        @include mq('xs') {
+            font-size: em(28px);
+            line-height: em(34px, 28px);
+        }
+        text-align: center;
+        font-size: em(42px);
+        font-weight: $font-weight--md;
+        margin-bottom: em(25px, 42px);
+    }
+}
+
+.workflow {
+    h2 {
+        @include mq('xs') {
+            font-size: em(26px);
+        }
+        font-size: em(28px);
+        font-weight: $font-weight--sm;
+    }
+    position: relative;
+    @include p-el($el: 'before', $el-width: 1px, $el-height: 100%) {
+        background-color: color(primary, x-light);
+        left: 0;
+        @include mq('md') {
+            left: 50%;
+        }
+    }
+
+    &-left {
+        position: relative;
+        padding: 12px 25px;
+        background: color(grey, x-light);
+        border-radius: $br-radius;
+        @include p-el($el: 'after', $el-width: 16px, $el-height: 16px) {
+            border-radius: $br-roundy;
+            background: linear-gradient(90deg, $dipti__red, $primary--color);
+            color: $dipti__white;
+            top: 75px;
+            left: -21px;
+
+            @include mq('md') {
+                left: auto;
+                right: -20px
+            }
+        }
+
+        @include mq('xs') {
+            margin-left: 15px;
+        }
+    }
+
+    &-left:nth-child(n + 2) {
+        @include mq('xs') {
+            margin-top: 50px;
+        }
+        margin-top: 150px;
+    }
+
+    &-right {
+        background: color(grey, x-light);
+        border-radius: $br-radius;
+        padding: 12px 25px;
+        margin-top: 150px;
+        @include mq('xs') {
+            margin-top: 50px;
+        }
+        position: relative;
+        @include p-el($el: 'before', $el-width: 16px, $el-height: 16px) {
+            border-radius: $br-roundy;
+            background: linear-gradient(90deg, $dipti__red, $primary--color);
+            color: $dipti__white;
+            top: 85px;
+            left: -21px;
+            @include mq('md') {
+                left: -20px;
+            }
+        }
+
+        @include mq('xs') {
+            margin-left: 15px;
+        }
+    }
+}
